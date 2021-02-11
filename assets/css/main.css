@@ -4,6 +4,7 @@
 /*===== VARIABLES CSS =====*/
 :root {
     --header-height: 3rem;
+    --nav-width: 68px;
 
     /*========== Colors ==========*/
     --first-color: #DA2535;
@@ -14,6 +15,7 @@
     --text-color-light: #8F8A8A;
     --body-color: #FEFBFB;
     --container-color: #FFF;
+    --white-color: #F7F6FB;
 
     /*========== Font and typography ==========*/
     --body-font: 'Poppins', sans-serif;
@@ -35,7 +37,6 @@
     --mb-5: 2.5rem;
     --mb-6: 3rem;
     /*========== z index ==========*/
-
     --z-tooltip: 10;
     --z-fixed: 100;
 }
@@ -72,12 +73,15 @@ body.dark-theme {
 }
 
 body {
+    position: relative;
     margin: var(--header-height) 0 0 0;
+    padding: 0 1rem;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
     line-height: 1.6;
+    transition: .5s;
 }
 
 h1,
@@ -107,6 +111,41 @@ a {
 img {
     max-width: 100%;
     height: auto;
+}
+
+/*===== HEADER =====*/
+.header {
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+    transition: .5s;
+}
+
+.header__toggle {
+    color: var(--first-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.header__img {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.header__img img {
+    width: 40px;
 }
 
 /*========== CLASS CSS ==========*/
@@ -140,74 +179,88 @@ img {
     background-color: var(--body-color);
 }
 
-/*========== NAV ==========*/
+
+/*===== NAV =====*/
+.l-navbar {
+    position: fixed;
+    top: 0;
+    left: -30%;
+    width: var(--nav-width);
+    height: 100vh;
+    background-color: var(--first-color);
+    padding: .5rem 1rem 0 0;
+    transition: .5s;
+    z-index: var(--z-fixed);
+}
+
 .nav {
-    height: var(--header-height);
+    height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    overflow: hidden;
 }
 
-@media screen and (max-width: 768px) {
-    .nav__menu {
-        position: fixed;
-        top: -100%;
-        left: 0;
-        right: 0;
-        width: 90%;
-        margin: 0 auto;
-        padding: 2.5rem 0 0;
-        text-align: center;
-        background-color: var(--body-color);
-        transition: .4s;
-        box-shadow: 0 0 4px rgba(0, 0, 0, .1);
-        border-radius: 2rem;
-        z-index: var(--z-fixed);
-    }
-}
-
-.nav__item {
-    margin-bottom: var(--mb-3);
-}
-
-.nav__link,
 .nav__logo,
-.nav__toggle {
-    color: var(--title-color);
-    font-weight: var(--font-semi-bold);
+.nav__link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+    padding: .5rem 0 .5rem 1.5rem;
 }
 
-.nav__logo:hover {
-    color: var(--first-color);
+.nav__logo {
+    margin-bottom: 2rem;
+}
+
+.nav__logo-icon {
+    font-size: 1.25rem;
+    color: var(--white-color);
+}
+
+.nav__logo-name {
+    color: var(--white-color);
+    font-weight: 700;
 }
 
 .nav__link {
+    position: relative;
+    color: var(--white-color);
+    margin-bottom: 1.5rem;
     transition: .3s;
 }
 
 .nav__link:hover {
-    color: var(--first-color);
+    color: var(--white-color);
 }
 
-.nav__toggle {
-    font-size: 1.3rem;
-    cursor: pointer;
+.nav__icon {
+    font-size: 1.25rem;
 }
 
-/* ACTIVE MENU LINK */
-.active-link {
-    position: relative;
+/*===== Mostrar el navbar mobile ===== */
+.show {
+    left: 0;
 }
 
-.active-link::before {
+/*===== Añadir padding al body mobile =====*/
+.body-pd {
+    padding-left: calc(var(--nav-width) + 1rem);
+}
+
+/*===== Activated links =====*/
+.activated {
+    color: var(--white-color);
+}
+
+.activated::before {
     content: '';
     position: absolute;
-    bottom: -.75rem;
-    left: 45%;
-    width: 5px;
-    height: 5px;
-    background-color: var(--title-color);
-    border-radius: 50%;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: var(--white-color);
 }
 
 /*========== HOME ==========*/
@@ -743,3 +796,4 @@ img {
     padding: 10px;
     font-size: 18px;
 }
+

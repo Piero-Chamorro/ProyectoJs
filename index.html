@@ -16,26 +16,67 @@
     <title>Proyect-Js</title>
 </head>
 
-<body>
+<body id="body-pd">
     <!--========== HEADER ==========-->
-    <header class="l-header" id="header">
-        <nav class="nav bd-container">
-            <a href="#" class="nav__logo">D'Rosas</a>
+    <header class="header" id="header">
+        <div class="header__toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link active-link">Inicio</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Sobre Nosotros</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Clientes</a></li>
-                    <li class="nav__item"><a href="contact.html" class="nav__link">Contáctanos</a></li>
-                    <li><i class='bx bx-sun change-theme' id="theme-button"></i></li>
-                </ul>
-            </div>
-            <div class="nav__toggle" id="nav-toggle">
-                <i class='bx bxs-widget'></i>
-            </div>
-        </nav>
+        <div class="header__img">
+            <img src="assets/img/perfil.jpg" alt="">
+        </div>
     </header>
+
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <a href="#" class="nav__logo">
+                    <i class='bx bxs-florist nav__logo-icon'></i>
+                    <span class="nav__logo-name">D'Rosas</span>
+                </a>
+
+                <div class="nav__list">
+                    <a href="#home" class="nav__link activated">
+                        <i class='bx bxs-grid-alt nav__icon'></i>
+                        <span class="nav__name">Inicio</span>
+                    </a>
+
+                    <a href="#" class="nav__link">
+                        <i class='bx bxs-info-circle nav__icon'></i>
+                        <span class="nav__name">Sobre Nosotros</span>
+                    </a>
+
+                    <a href="#" class="nav__link">
+                        <i class='bx bxs-heart nav__icon'></i>
+                        <span class="nav__name">Clientes</span>
+                    </a>
+
+                    <a href="#" class="nav__link">
+                        <i class='bx bxs-message-rounded nav__icon'></i>
+                        <span class="nav__name">Contáctanos</span>
+                    </a>
+
+                    <a href="#" class="nav__link">
+                        <i class='bx bxs-help-circle nav__icon'></i>
+                        <span class="nav__name">Más Información</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav__list">
+                <a href="#" class="nav__link">
+                    <i class='bx bx-sun nav__icon' id="theme-button"></i>
+                    <span class="nav__name">Tema</span>
+                </a>
+                <a href="login.html" class="nav__link">
+                    <i class='bx bx-log-out nav__icon'></i>
+                    <span class="nav__name">Salir</span>
+                </a>
+            </div>
+
+        </nav>
+    </div>
 
     <main class="l-main">
         <!--========== HOME ==========-->
@@ -46,8 +87,10 @@
                 </div>
                 <div class="home__data">
                     <h1 class="home__title">Personaliza tu esfera navideña</h1>
-                    <p class="home__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-                        nisi aliquid, corrupti dolorum consequatur itaque exercitationem alias numquam sint reiciendis
+                    <p class="home__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Perspiciatis
+                        nisi aliquid, corrupti dolorum consequatur itaque exercitationem alias numquam sint
+                        reiciendis
                         beatae officiis assumenda quo minima, placeat labore corporis impedit harum.</p>
                     <a href="#" class="button">Vamos a ello</a>
                 </div>
