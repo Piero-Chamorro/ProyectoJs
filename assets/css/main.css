@@ -373,8 +373,7 @@ img {
     outline: none;
 }
 
-
-/*========== ACCESSORIES ==========*/
+/*========== SHOP ==========*/
 .shop__container {
     grid-template-columns: repeat(2, 1fr);
     padding-bottom: 2rem;
