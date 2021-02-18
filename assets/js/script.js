@@ -1,12 +1,104 @@
-/*===== LOGIN =====*/
-function validar() {
-    var usuario = document.getElementById("usuario").value;
-    var password = document.getElementById("password").value;
+/*===== PROGRESS BAR =====*/
+$(window).scroll(function () {
+    var scroll = $(window).scrollTop(),
+        dh = $(document).height(),
+        wh = $(window).height();
+    scrollPercent = (scroll / (dh - wh)) * 100;
+    $('#progressbar').css('height', scrollPercent + '%');
+});
 
-    if (usuario == "USUARIO1" && password == "CONTRASEÑA1") {
-        window.location = "index.html";
+/*===== COUNTDOWN =====*/
+const months = [
+    'Enero',
+    'Febrero',
+    'Marzo',
+    'Abril',
+    'Mayo',
+    'Junio',
+    'Julio',
+    'Agosto',
+    'Septiembre',
+    'Octubre',
+    'Noviembre',
+    'Diciembre',
+];
+const weekdays = [
+    'Lunes',
+    'Martes',
+    'Miércoles',
+    'Jueves',
+    'Viernes',
+    'Sábado',
+    'Domingo',
+];
+const giveaway = document.querySelector('.giveaway');
+const deadline = document.querySelector('.deadline');
+const items = document.querySelectorAll('.deadline-format h4');
+
+let tempDate = new Date();
+let tempYear = tempDate.getFullYear();
+let tempMonth = tempDate.getMonth();
+let tempDay = tempDate.getDate();
+// months are ZERO index based;
+
+//const futureDate = new Date(tempYear, tempMonth, tempDay + 0, 18, 34, 0);
+
+ let futureDate = new Date(2021, 2, 1, 11, 30, 0);
+
+const year = futureDate.getFullYear();
+const hours = futureDate.getHours();
+const minutes = futureDate.getMinutes();
+
+let month = futureDate.getMonth();
+month = months[month];
+const weekday = weekdays[futureDate.getDay()];
+const date = futureDate.getDate();
+giveaway.textContent = `Podras hacer tus pedidos a partir del ${weekday}, ${date} ${month} del ${year} a las ${hours}:${minutes}am`;
+
+const futureTime = futureDate.getTime();
+
+function getRemaindingTime() {
+    const today = new Date().getTime();
+
+    const t = futureTime - today;
+    // 1s = 1000ms
+    // 1m = 60s
+    // 1hr = 60m
+    // 1d = 24hr
+    // values in miliseconds
+    const oneDay = 24 * 60 * 60 * 1000;
+    const oneHour = 60 * 60 * 1000;
+    const oneMinute = 60 * 1000;
+    // calculate all values
+    let days = t / oneDay;
+    days = Math.floor(days);
+    let hours = Math.floor((t % oneDay) / oneHour);
+    let minutes = Math.floor((t % oneHour) / oneMinute);
+    let seconds = Math.floor((t % oneMinute) / 1000);
+
+    // set values array
+    const values = [days, hours, minutes, seconds];
+
+    function format(item) {
+        if (item < 10) {
+            return (item = `0${item}`);
+        }
+        return item;
+    }
+
+    items.forEach(function (item, index) {
+        item.innerHTML = format(values[index]);
+    });
+
+    if (t < 0) {
+        clearInterval(countdown);
+        deadline.innerHTML = `<a href="#" class="button">Vamos a ello</a>`;
     }
 }
+// countdown;
+let countdown = setInterval(getRemaindingTime, 1000);
+//set initial values
+getRemaindingTime();
 
 /*===== MOSTRAR NAVBAR  =====*/
 const showNavBar = (toggleId, navId, bodyId, headerId) => {
