@@ -1,1 +1,2 @@
-Iniciar desde login.html
+Iniciar desde el index.html
+Errores corregidos
