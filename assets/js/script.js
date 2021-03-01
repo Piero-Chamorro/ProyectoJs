@@ -323,3 +323,72 @@ const vue = new Vue({
 });
 
 
+// Variables de producto
+const productsDOM = document.querySelector('.shop__container');
+
+// cart
+let cart = [];
+
+// Obtenemos los productos
+class Products {
+    async getProducts() {
+        try {
+            let result = await fetch("products.json");
+            let data = await result.json();
+            let products = data.items;
+            products = products.map(item => {
+                const {title,section,price} = item.fields;
+                const {id} = item.sys;
+                const image = item.fields.image.fields.file.url;
+                return {title,section,price,id,image}
+            })
+            return products;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+// Mostrar los productos
+class UI {
+    displayProducts(products) {
+        let result = "";
+        products.forEach(product => {
+            result += `
+            <div class="shop__content">
+                    <img src="${product.image}" alt="product" class="shop__img">
+                    <h3 class="shop__title">${product.title}</h3>
+                    <span class="shop__category">${product.section}</span>
+                    <span class="shop__preci">S/${product.price}</span>
+                    <a class="button shop__button" data-id="1" ><i class='bx bx-heart'></i></a>
+                </div>
+            `;
+        });
+        productsDOM.innerHTML = result;
+    }
+    getBagButtons(){
+        const buttons = [...document.querySelector(".shop__button")];
+        buttons.forEach(button => {
+            let id = button.dataset.id;
+            let inCart = cart.find(item => item.id === id)
+        })
+    }
+}
+
+// local storage
+class Storage {
+    static saveProducts(products){
+        localStorage.setItem("products", JSON.stringify(products));
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const ui = new UI();
+    const products = new Products();
+
+    // Obtenemos todos los productos
+    products.getProducts().then(products => {
+        ui.displayProducts(products);
+        Storage.saveProducts(products);
+    });
+});

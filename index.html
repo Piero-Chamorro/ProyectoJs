@@ -5,317 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--========== BOX ICONS ==========-->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
-    <!--========== FONT AWESOME ==========-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-    <!--========== CSS ==========-->
-    <link rel="stylesheet" href="assets/css/main.css">
-
-    <title>Proyect-Js</title>
+    <title>Login</title>
 </head>
 
-<body id="body-pd">
-    <!--========== SCROLLTOP ==========-->
-    <a href="#" class="scrolltop" id="scroll-top">
-        <i class='bx bx-up-arrow-alt scrolltop__icon'></i>
-    </a>
-
-    <!-- ======= PROGRESSBAR ======= -->
-    <div id="progressbar"></div>
-
-    <!--========== HEADER ==========-->
-    <header class="header" id="header">
-        <div class="header__toggle">
-            <i class='bx bx-menu' id="header-toggle"></i>
-        </div>
-
-        <div class="header__img">
-            <img src="assets/img/perfil.jpg" alt="">
-        </div>
-    </header>
-
-    <div class="l-navbar" id="nav-bar">
-        <nav class="nav">
-            <div>
-                <a href="#" class="nav__logo">
-                    <i class='bx bxs-florist nav__logo-icon'></i>
-                    <span class="nav__logo-name">D'Rosas</span>
-                </a>
-
-                <div class="nav__list">
-                    <a href="#home" class="nav__link activated">
-                        <i class='bx bxs-grid-alt nav__icon'></i>
-                        <span class="nav__name">Inicio</span>
-                    </a>
-
-                    <a href="#shop" class="nav__link">
-                        <i class='bx bxs-shopping-bags nav__icon'></i>
-                        <span class="nav__name">Tienda</span>
-                    </a>
-
-                    <a href="#" class="nav__link">
-                        <i class='bx bxs-info-circle nav__icon'></i>
-                        <span class="nav__name">Sobre Nosotros</span>
-                    </a>
-
-                    <a href="#client" class="nav__link">
-                        <i class='bx bxs-heart nav__icon'></i>
-                        <span class="nav__name">Clientes</span>
-                    </a>
-
-                    <a href="#" class="nav__link">
-                        <i class='bx bxs-message-rounded nav__icon'></i>
-                        <span class="nav__name">Contáctanos</span>
-                    </a>
-
-                    <a href="#" class="nav__link">
-                        <i class='bx bxs-help-circle nav__icon'></i>
-                        <span class="nav__name">Más Información</span>
-                    </a>
-                </div>
+<body>
+    <div class="login">
+        <div class="login__content">
+            <div class="login__img">
+                <img src="assets/img/img-login.svg" alt="">
             </div>
 
-            <div class="nav__list">
-                <a class="nav__link">
-                    <i class='bx bx-sun nav__icon' id="theme-button"></i>
-                    <span class="nav__name">Tema</span>
-                </a>
-                <a href="login.html" class="nav__link">
-                    <i class='bx bx-log-out nav__icon'></i>
-                    <span class="nav__name">Salir</span>
-                </a>
-            </div>
+            <div class="login__forms">
+                <form action="" class="login__registre" id="login-in">
+                    <h1 class="login__title">Ingresar</h1>
 
-        </nav>
-    </div>
-
-    <main class="l-main">
-        <!--========== HOME ==========-->
-        <section class="home" id="home">
-            <div class="home__container bd-container bd-grid">
-                <div class="home__img">
-                    <img src="assets/img/home.png" alt="">
-                </div>
-
-                <div class="home__data">
-
-                    <h1 class="home__title">Esta navidad regala <span class="typing"></span></h1>
-
-                    <h4 class="deadline0 giveaway">
-                        podras hacer tus pedidos a partir del martes, 1 marzo del 2021 a las 11:30am
-                    </h4>
-                    <p class="home__description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <div class="deadline">
-                        <!-- DIAS -->
-                        <div class="deadline-format">
-                            <div class="count">
-                                <h4 class="days">34</h4>
-                                <span>días</span>
-                            </div>
-                        </div>
-                        <!-- HORAS -->
-                        <div class="deadline-format">
-                            <div class="count">
-                                <h4 class="hours">34</h4>
-                                <span>horas</span>
-                            </div>
-                        </div>
-                        <!-- MINUTOS -->
-                        <div class="deadline-format">
-                            <div class="count">
-                                <h4 class="minutes">34</h4>
-                                <span>mins</span>
-                            </div>
-                        </div>
-                        <!-- SEGUNDOS -->
-                        <div class="deadline-format">
-                            <div class="count">
-                                <h4 class="seconds">34</h4>
-                                <span>secs</span>
-                            </div>
-                        </div>
+                    <div class="login__box">
+                        <i class='bx bx-user login__icon'></i>
+                        <input type="text" name="usuario" id="usuario" type="text" placeholder="USUARIO1"
+                            class="login__input" value="">
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!--========== ACCESSORIES ==========-->
-        <section class="shop section bd-container" id="shop">
-            <div class="client__title">
-                <h2>productos</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="shop__container bd-grid">
-                <div class="shop__content">
-                    <img src="assets/img/shop1.png" alt="" class="shop__img">
-                    <h3 class="shop__title">Esfera de Nieve</h3>
-                    <span class="shop__category">Adornos</span>
-                    <span class="shop__preci">$9.45</span>
-                    <a href="#" class="button shop__button"><i class='bx bx-heart'></i></a>
-                </div>
-
-                <div class="shop__content">
-                    <img src="assets/img/shop2.png" alt="" class="shop__img">
-                    <h3 class="shop__title">Bastón de Caramelo</h3>
-                    <span class="shop__category">Dulces</span>
-                    <span class="shop__preci">$2.52</span>
-                    <a href="#" class="button shop__button"><i class='bx bx-heart'></i></a>
-                </div>
-
-                <div class="shop__content">
-                    <img src="assets/img/shop3.png" alt="" class="shop__img">
-                    <h3 class="shop__title">Figuras Navideñas</h3>
-                    <span class="shop__category">Adornos</span>
-                    <span class="shop__preci">$13.15</span>
-                    <a href="#" class="button shop__button"><i class='bx bx-heart'></i></a>
-                </div>
-
-                <div class="shop__content">
-                    <img src="assets/img/shop4.png" alt="" class="shop__img">
-                    <h3 class="shop__title">Esferas Navideñas</h3>
-                    <span class="shop__category">Adornos</span>
-                    <span class="shop__preci">$4.25</span>
-                    <a href="#" class="button shop__button"><i class='bx bx-heart'></i></a>
-                </div>
-
-                <div class="shop__content">
-                    <img src="assets/img/shop5.png" alt="" class="shop__img">
-                    <h3 class="shop__title">Regalo sorpresa</h3>
-                    <span class="shop__category">Regalos</span>
-                    <span class="shop__preci">$7.99</span>
-                    <a href="#" class="button shop__button"><i class='bx bx-heart'></i></a>
-                </div>
-                <div class="shop__content">
-                    <img src="assets/img/shop6.png" alt="" class="shop__img">
-                    <h3 class="shop__title">Donaciones</h3>
-                    <span class="shop__category">Ayuda</span>
-                    <span class="shop__preci">$?</span>
-                    <a href="#" class="button shop__button"><i class='bx bx-heart'></i></a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-
-    <!--========== CLIENTES ==========-->
-    <section class="client section bd-container" id="client">
-        <!-- title -->
-        <div class="client__title">
-            <h2>nuestros clientes</h2>
-            <div class="underline"></div>
-        </div>
-        <!-- review -->
-        <article class="client__review">
-            <div class="client__img">
-                <img src="assets/img/person-1.jpg" id="person-img" alt="" />
-            </div>
-            <h4 id="author">sara capa</h4>
-            <p id="grade">mejor cliente</p>
-            <p id="info">
-                Mi página favorita sin dudarlo, he adquirido una gran cantidad de productos
-                pero sin lugar a duda mi favorito son los regalos sorpresa, mis nietos
-                quedaron fascinados. La súper recomiendo y más ahora con lo difícil que es ver a
-                la familia.
-            </p>
-
-            <div class="client__button">
-                <button class="prev-btn">
-                    <i class='bx bxs-chevron-left'></i>
-                </button>
-                <button class="next-btn">
-                    <i class='bx bxs-chevron-right'></i>
-                </button>
-            </div>
-
-            <div class="random-btn">
-                <span class="random-btn__mask"></span>
-                <span class="random-btn__text">al azar</span>
-                <span class="random-btn__text random-btn__text--bis">al azar</span>
-            </div>
-        </article>
-    </section>
-
-    <!--========== SEND GIFT ==========-->
-    <section class="send section">
-        <div class="send__container bd-container bd-grid">
-            <div class="send__content">
-                <h2 class="section-title-center send__title">Contacta con Nosotros</h2>
-                <p class="send__description">Sí quieres una atención más personalizada mandanos un mail.</p>
-                <form action="">
-                    <div class="send__direction" id="app">
-                        <input type="email" placeholder="Escribe tu correo aquí" class="send__input" id="app" v-model="message">
-                        <a class="button" @click="enviar" >Enviar</a>
+                    <div class="login__box">
+                        <i class='bx bx-lock-alt login__icon'></i>
+                        <input type="password" name="password" id="password" placeholder="CONTRASEÑA1"
+                            class="login__input" value="">
                     </div>
+
+                    <a href="#" class="login__forgot">Olvide mi contraseña</a>
+                    <a href="#" type="button" name="btnVerifivaca" id="btnVerifica" onclick="validar()"
+                        value="verificar" class="login__button">
+                    <button type="submit">
+                        Ingresar
+                    </button>
+                    </a>
                 </form>
             </div>
-
-            <div class="send__img">
-                <img src="assets/img/send.png" alt="">
-            </div>
         </div>
-    </section>
-
-    <!--========== FOOTER ==========-->
-    <footer class="footer section">
-        <div class="footer__container bd-container bd-grid">
-            <div class="footer__content">
-                <h3 class="footer__title">
-                    <a href="#" class="footer__logo">Personalizar Ahora</a>
-                </h3>
-                <p class="footer__description">Lorem, ipsum dolor sit amet <br>consectetur</p>
-            </div>
-
-            <div class="footer__content">
-                <h3 class="footer__title">Otros</h3>
-                <ul>
-                    <li><a href="payment.html" class="footer__link" target="_blank">Agregar Metodo de Pago</a></li>
-                    <li><a href="#" class="footer__link">Descuento</a></li>
-                    <li><a href="#" class="footer__link">Modo Prueba</a></li>
-                </ul>
-            </div>
-
-            <div class="footer__content">
-                <h3 class="footer__title">Más Servicios</h3>
-                <ul>
-                    <li><a href="#" class="footer__link">Blog</a></li>
-                    <li><a href="#" class="footer__link">San Valentin</a></li>
-                    <li><a href="#" class="footer__link">Regalos</a></li>
-                </ul>
-            </div>
-
-            <div class="footer__content">
-                <h3 class="footer__title">Redes Sociales</h3>
-                <a href="#" class="footer__social"><i class='bx bxl-facebook-circle '></i></a>
-                <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
-                <a href="#" class="footer__social"><i class='bx bxl-instagram-alt'></i></a>
-            </div>
-        </div>
-
-        <p class="footer__copy">&#169; 2021 Piero Chamorro. Todos los derechos reservados.</p>
-    </footer>
-
+    </div>
     <!--========== JQUERY ==========-->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
-    <!--========== TYPING ANIMATION ==========-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-
-    <!--========== EMAIL JS ==========-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js">
-    </script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js" type="text/javascript"></script>
-
-    <!--========== SCRIPT JS ==========-->
-    <script defer src="assets/js/script.js"></script>
-
-    <script>
-       
-    </script>
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/login.js"></script>
 </body>
 
 </html>

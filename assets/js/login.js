@@ -17,6 +17,6 @@ function validar() {
     var password = document.getElementById("password").value;
 
     if (usuario == "USUARIO1" && password == "CONTRASEÑA1") {
-        window.location = "index.html";
+        window.location = "principal.html";
     }
 }

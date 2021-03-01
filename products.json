@@ -1,0 +1,75 @@
+{
+    "items": [{
+            "sys": { "id": "1" },
+            "fields": {
+                "title": "esfera de nieve",
+                "section": "adornos",
+                "price": 9.45,
+                "image": { "fields": { "file": { "url": "./assets/img/snowball.png" } } }
+            }
+        },
+        {
+            "sys": { "id": "2" },
+            "fields": {
+                "title": "dulce navideño",
+                "section": "dulces",
+                "price": 2.52,
+                "image": { "fields": { "file": { "url": "assets/img/candy.png" } } }
+            }
+        },
+        {
+            "sys": { "id": "3" },
+            "fields": {
+                "title": "figura navideña",
+                "section": "adornos",
+                "price": 13.15,
+                "image": { "fields": { "file": { "url": "assets/img/figure.png" } } }
+            }
+        },
+        {
+            "sys": { "id": "4" },
+            "fields": {
+                "title": "esfera navideña",
+                "section": "adornos",
+                "price": 4.25,
+                "image": { "fields": { "file": { "url": "assets/img/sphere.png" } } }
+            }
+        },
+        {
+            "sys": { "id": "5" },
+            "fields": {
+                "title": "regalo sorpresa",
+                "section": "regalos",
+                "price": 88.99,
+                "image": { "fields": { "file": { "url": "assets/img/gift.png" } } }
+            }
+        },
+        {
+            "sys": { "id": "6" },
+            "fields": {
+                "title": "esfera de nieve personalizada",
+                "section": "adornos",
+                "price": 32.99,
+                "image": { "fields": { "file": { "url": "assets/img/snowball-personalized.png" } } }
+            }
+        },
+        {
+            "sys": { "id": "7" },
+            "fields": {
+                "title": "figura personalizada",
+                "section": "adornos",
+                "price": 45.99,
+                "image": { "fields": {"file": { "url": "./assets/img/figure-personalized.png" } } }
+            }
+        },
+        {
+            "sys": { "id": "8" },
+            "fields": {
+                "title": "esfera personalizada",
+                "section": "adornos",
+                "price": 33.99,
+                "image": { "fields": { "file": { "url": "assets/img/sphere-personalized.png" } } }
+            }
+        }
+    ]
+}
