@@ -8,8 +8,6 @@ $(document).ready(() => {
 $('.login__registre').keypress((e) => {
     if (e.which === 13) {
         $('.login__registre').submit();
-        // Me parecio verlo como parte del desafio pero el resultado no me gusto
-        // alert('Se presiono enter');
     }
 });
 

@@ -1,3 +1,15 @@
+/*==================== SCROLLTOP ====================*/
+function scrollTop() {
+    const scrollTop = document.getElementById('scroll-top');
+    // Queremos que se muestre solo cuando el desplazamiento sea superior a 560
+    if (this.scrollY >= 560) {
+        scrollTop.classList.add('show-scroll');
+    } else {
+        scrollTop.classList.remove('show-scroll');
+    }
+}
+window.addEventListener('scroll', scrollTop);
+
 /*===== PROGRESS BAR =====*/
 $(window).scroll(function () {
     var scroll = $(window).scrollTop(),
@@ -33,6 +45,7 @@ const weekdays = [
 ];
 const giveaway = document.querySelector('.giveaway');
 const deadline = document.querySelector('.deadline');
+const deadline0 = document.querySelector('.deadline0');
 const items = document.querySelectorAll('.deadline-format h4');
 
 let tempDate = new Date();
@@ -42,10 +55,10 @@ let tempDay = tempDate.getDate();
 // Los meses comienzan desde el inidice 0
 
 // Para la prueba
-const futureDate = new Date(tempYear, tempMonth, tempDay + 0, 18, 34, 0);
+// const futureDate = new Date(tempYear, tempMonth, tempDay + 0, 18, 34, 0);
 
 // Fecha Oficial
-// let futureDate = new Date(2021, 2, 1, 11, 30, 0);
+let futureDate = new Date(2021, 2, 1, 9, 0, 0);
 
 const year = futureDate.getFullYear();
 const hours = futureDate.getHours();
@@ -94,11 +107,12 @@ function getRemaindingTime() {
 
     if (t < 0) {
         clearInterval(countdown);
-        // Cuando el termine habilite botón
+        // Cuando el tiempo termine se habilita un botón
+        deadline0.innerHTML = '';
         deadline.innerHTML = `<a href="#" class="button">Vamos a ello</a>`;
     }
 }
-// countdown;
+// countdown
 let countdown = setInterval(getRemaindingTime, 1000);
 // valores iniciales
 getRemaindingTime();
@@ -126,6 +140,18 @@ const showNavBar = (toggleId, navId, bodyId, headerId) => {
 }
 
 showNavBar('header-toggle', 'nav-bar', 'body-pd', 'header');
+
+/*==================== BACKGROUND HEADER ====================*/
+function scrollHeader() {
+    const nav = document.getElementById('header')
+    // Cuando el desplazamiento sea superior a 200 de altura se le aplicara una clase
+    if (this.scrollY >= 200) {
+        nav.classList.add('scroll-header');
+    } else {
+        nav.classList.remove('scroll-header');
+    }
+}
+window.addEventListener('scroll', scrollHeader);
 
 /*===== LINK ACTIVATED  =====*/
 const linkColor = document.querySelectorAll('.nav__link');
@@ -168,3 +194,101 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme());
     localStorage.setItem('selected-icon', getCurrentIcon());
 });
+
+$(document).ready(function () {
+    // Script de animación de texto
+    var typed = new Typed(".typing", {
+        strings: ["SONRISAS", "AMOR", "CARIÑO", "ALEGRÍA", "ESPERANZA"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
+});
+
+// datos de las reseñas
+const reviews = [{
+        id: 1,
+        name: "maria herrera",
+        grade: "nuevo comprador",
+        img: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg",
+        text: "Muy padres diseños, de buen tamaño y lo mejor llegaron muy pronto. ¡Me encantaron!",
+    },
+    {
+        id: 2,
+        name: "carla merino",
+        grade: "comprador frecuente",
+        img: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg",
+        text: "Comparado con el costo en las tiendas, esta fue una gran compra. Además, nunca pude encontrar este estilo en las tiendas. Compré dos juegos una de figuras y otra de esferas navideñas. Se veían fantásticos en el árbol de mi comedor el año pasado.",
+    },
+    {
+        id: 3,
+        name: "guillermo castilla",
+        grade: "nuevo comprador",
+        img: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg",
+        text: "Exactamente lo que quería. Adornos de plástico de gran apariencia para usar en el exterior de mi casa. Muy feliz.",
+    },
+    {
+        id: 4,
+        name: "jose frias",
+        grade: "comprador frecuente",
+        img: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg",
+        text: "Los compré como regalo y me sorprendió mucho ver cuántos adornos recibí por el precio que pagué. Muy buen precio y los adornos se veían geniales. ¡Mi hermana los amaba!",
+    },
+];
+
+// seleccionamos items
+const img = document.getElementById("person-img");
+const author = document.getElementById("author");
+const grade = document.getElementById("grade");
+const info = document.getElementById("info");
+
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+const randomBtn = document.querySelector(".random-btn");
+
+// item inicial
+let currentItem = 0;
+
+// cargamos el item inicial
+window.addEventListener("DOMContentLoaded", function () {
+    const item = reviews[currentItem];
+    img.src = item.img;
+    author.textContent = item.name;
+    grade.textContent = item.grade;
+    info.textContent = item.text;
+});
+
+// se muestra la persona basada en su item
+function showPerson(person) {
+    const item = reviews[person];
+    img.src = item.img;
+    author.textContent = item.name;
+    grade.textContent = item.grade;
+    info.textContent = item.text;
+}
+
+// mostrar persona siquiente
+nextBtn.addEventListener("click", function () {
+    currentItem++;
+    if (currentItem > reviews.length - 1) {
+        currentItem = 0;
+    }
+    showPerson(currentItem);
+});
+
+// mostrar persona anterior
+prevBtn.addEventListener("click", function () {
+    currentItem--;
+    if (currentItem < 0) {
+        currentItem = reviews.length - 1;
+    }
+    showPerson(currentItem);
+});
+
+// mostrar persona aleatoria
+randomBtn.addEventListener("click", function () {
+    currentItem = Math.floor(Math.random() * reviews.length);
+    showPerson(currentItem);
+});
+
+

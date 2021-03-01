@@ -8,14 +8,21 @@
     <!--========== BOX ICONS ==========-->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
+    <!--========== FONT AWESOME ==========-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
+
     <!--========== CSS ==========-->
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
 
     <title>Proyect-Js</title>
 </head>
 
 <body id="body-pd">
+    <!--========== SCROLLTOP ==========-->
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-up-arrow-alt scrolltop__icon'></i>
+    </a>
+
     <!-- ======= PROGRESSBAR ======= -->
     <div id="progressbar"></div>
 
@@ -44,7 +51,7 @@
                         <span class="nav__name">Inicio</span>
                     </a>
 
-                    <a href="#" class="nav__link">
+                    <a href="#shop" class="nav__link">
                         <i class='bx bxs-shopping-bags nav__icon'></i>
                         <span class="nav__name">Tienda</span>
                     </a>
@@ -54,7 +61,7 @@
                         <span class="nav__name">Sobre Nosotros</span>
                     </a>
 
-                    <a href="#" class="nav__link">
+                    <a href="#client" class="nav__link">
                         <i class='bx bxs-heart nav__icon'></i>
                         <span class="nav__name">Clientes</span>
                     </a>
@@ -72,7 +79,7 @@
             </div>
 
             <div class="nav__list">
-                <a href="#" class="nav__link">
+                <a class="nav__link">
                     <i class='bx bx-sun nav__icon' id="theme-button"></i>
                     <span class="nav__name">Tema</span>
                 </a>
@@ -90,18 +97,18 @@
         <section class="home" id="home">
             <div class="home__container bd-container bd-grid">
                 <div class="home__img">
-                    <img src="assets/img/christmas bell.png" alt="">
+                    <img src="assets/img/home.png" alt="">
                 </div>
+
                 <div class="home__data">
-                    <h1 class="home__title">Personaliza tu esfera navideña</h1>
-                    <h4 class="giveaway">
+
+                    <h1 class="home__title">Esta navidad regala <span class="typing"></span></h1>
+
+                    <h4 class="deadline0 giveaway">
                         podras hacer tus pedidos a partir del martes, 1 marzo del 2021 a las 11:30am
                     </h4>
                     <p class="home__description">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Perspiciatis nisi aliquid, corrupti dolorum consequatur itaque
-                        exercitationem alias numquam sint reiciendis beatae officiis
-                        assumenda quo minima, placeat labore corporis impedit harum.
                     </p>
                     <div class="deadline">
                         <!-- DIAS -->
@@ -139,8 +146,10 @@
 
         <!--========== ACCESSORIES ==========-->
         <section class="shop section bd-container" id="shop">
-            <h2 class="section-title">New Christmas <br> Accessories</h2>
-
+            <div class="client__title">
+                <h2>productos</h2>
+                <div class="underline"></div>
+            </div>
             <div class="shop__container bd-grid">
                 <div class="shop__content">
                     <img src="assets/img/shop1.png" alt="" class="shop__img">
@@ -192,63 +201,64 @@
         </section>
     </main>
 
-    <!-- AQUI IRA CONTACTANOS MIENTRAS TANTO ESTA PARTE IRA ENLAZADO A UN HTML -->
-    <!-- ========== CONTACTANOS ==========
-    <section class="send section">
-        <div class="send__container">
-            <section class="contact">
-                <div class="content">
-                    <h2>Estamos para ayudarte</h2>
-                    <p>Puedes mandar tus dudas y te la responderemos cuanto antes.</p>
-                </div>
-                <div class="container">
-                    <div class="contact-info">
-                        <div class="box">
-                            <div class="icon"><i class='bx bx-map'></i></div>
-                            <div class="text">
-                                <h3>Dirección</h3>
-                                <p>Lima,<br>Perú,<br>15431</p>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="icon"><i class='bx bx-phone'></i></div>
-                            <div class="text">
-                                <h3>Teléfono</h3>
-                                <p>(01)645-6547</p>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="icon"><i class='bx bx-mail-send'></i></div>
-                            <div class="text">
-                                <h3>Email</h3>
-                                <p>importaciones@natividad.pe</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-form">
-                        <form>
-                            <h2>Enviar Mensaje</h2>
-                            <div class="input-box">
-                                <input type="text" name="" required="required">
-                                <span>Nombre Completo</span>
-                            </div>
-                            <div class="input-box">
-                                <input type="text" name="" required="required">
-                                <span>Email</span>
-                            </div>
-                            <div class="input-box">
-                                <textarea required="required"></textarea>
-                                <span>Escriba aquí...</span>
-                            </div>
-                            <div class="input-box">
-                                <input type="submit" name="" value="Enviar">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
+
+    <!--========== CLIENTES ==========-->
+    <section class="client section bd-container" id="client">
+        <!-- title -->
+        <div class="client__title">
+            <h2>nuestros clientes</h2>
+            <div class="underline"></div>
         </div>
-    </section> -->
+        <!-- review -->
+        <article class="client__review">
+            <div class="client__img">
+                <img src="assets/img/person-1.jpg" id="person-img" alt="" />
+            </div>
+            <h4 id="author">sara capa</h4>
+            <p id="grade">mejor cliente</p>
+            <p id="info">
+                Mi página favorita sin dudarlo, he adquirido una gran cantidad de productos
+                pero sin lugar a duda mi favorito son los regalos sorpresa, mis nietos
+                quedaron fascinados. La súper recomiendo y más ahora con lo difícil que es ver a
+                la familia.
+            </p>
+
+            <div class="client__button">
+                <button class="prev-btn">
+                    <i class='bx bxs-chevron-left'></i>
+                </button>
+                <button class="next-btn">
+                    <i class='bx bxs-chevron-right'></i>
+                </button>
+            </div>
+
+            <div class="random-btn">
+                <span class="random-btn__mask"></span>
+                <span class="random-btn__text">al azar</span>
+                <span class="random-btn__text random-btn__text--bis">al azar</span>
+            </div>
+        </article>
+    </section>
+
+    <!--========== SEND GIFT ==========-->
+    <section class="send section">
+        <div class="send__container bd-container bd-grid">
+            <div class="send__content">
+                <h2 class="section-title-center send__title">Contacta con Nosotros</h2>
+                <p class="send__description">Sí quieres una atención más personalizada mandanos un mail.</p>
+                <form action="">
+                    <div class="send__direction" id="app">
+                        <input type="email" placeholder="Escribe tu correo aquí" class="send__input" id="app" v-model="message">
+                        <a class="button" @click="enviar" >Enviar</a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="send__img">
+                <img src="assets/img/send.png" alt="">
+            </div>
+        </div>
+    </section>
 
     <!--========== FOOTER ==========-->
     <footer class="footer section">
@@ -288,10 +298,52 @@
 
         <p class="footer__copy">&#169; 2021 Piero Chamorro. Todos los derechos reservados.</p>
     </footer>
+
     <!--========== JQUERY ==========-->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <!--========== TYPING ANIMATION ==========-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+
+    <!--========== EMAIL JS ==========-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js">
+    </script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js" type="text/javascript"></script>
+
     <!--========== SCRIPT JS ==========-->
     <script defer src="assets/js/script.js"></script>
+
+    <script>
+        (function () {
+            emailjs.init("user_l6FAfXJuzHwTJkHTVTT6O");
+        })();
+        const vue = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    message: ''
+                }
+            },
+            methods: {
+                enviar() {
+                    let data = {
+                        message: this.message
+                    };
+
+                    emailjs.send("service_2u5omlc", "form-contacto", data)
+                        .then(function (response) {
+                            if (response.text === 'OK') {
+                                alert('El correo se ha enviado de forma exitosa');
+                            }
+                            console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+                        }, function (err) {
+                            alert('Ocurrió un problema al enviar el correo');
+                            console.log("FAILED. error=", err);
+                        });
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
