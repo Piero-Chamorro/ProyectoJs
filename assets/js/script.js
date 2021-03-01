@@ -291,4 +291,35 @@ randomBtn.addEventListener("click", function () {
     showPerson(currentItem);
 });
 
+// enviar mail
+(function () {
+    emailjs.init("user_l6FAfXJuzHwTJkHTVTT6O");
+})();
+const vue = new Vue({
+    el: '#app',
+    data() {
+        return {
+            message: ''
+        }
+    },
+    methods: {
+        enviar() {
+            let data = {
+                message: this.message
+            };
+
+            emailjs.send("service_2u5omlc", "form-contacto", data)
+                .then(function (response) {
+                    if (response.text === 'OK') {
+                        console.log('El correo se ha enviado de forma exitosa');
+                    }
+                    console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+                }, function (err) {
+                    alert('Ocurrió un problema al enviar el correo');
+                    console.log("FAILED. error=", err);
+                });
+        }
+    }
+});
+
 
