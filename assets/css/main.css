@@ -1752,4 +1752,5 @@ main {
 
 .fix-text {
     padding-right: 1rem;
+    text-align: justify;
 }
